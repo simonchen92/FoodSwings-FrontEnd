@@ -13,9 +13,7 @@ class ShowRestaurants extends Component {
 
   componentDidMount () {
     showRestaurants(this.props.user)
-      .then(d => { console.log(d); return d })
       .then(response => this.setState({ restaurants: response.data.restaurants }))
-      .then(() => console.log(this.state))
       .catch(error => {
         console.error(error)
         this.setState({ name: '', location: '', telephone: '', specialty: '' })
@@ -35,7 +33,6 @@ class ShowRestaurants extends Component {
           <h1 className='restaurant-name'>My Restaurants</h1>
           {restaurants.map(restaurant => (
             <div className='restaurant-id' key={restaurant.id}>
-              {/* <h3>{restaurant.name}</h3> */}
               <Link to={'/restaurants/' + restaurant.id}>{restaurant.name}</Link>
             </div>
           ))}

@@ -57,3 +57,16 @@ export const deleteRestaurant = (user, id) => {
     contentType: 'application/json'
   })
 }
+
+export const searchYelp = (search, user) => {
+  console.log('user is', user)
+  console.log('search is', search)
+  return axios({
+    url: apiUrl + '/yelp-search',
+    method: 'POST',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: { search }
+  })
+}

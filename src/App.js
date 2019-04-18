@@ -14,6 +14,7 @@ import ShowRestaurants from './restaurant/components/ShowRestaurants'
 import ShowRestaurant from './restaurant/components/ShowRestaurant'
 import CreateRestaurant from './restaurant/components/CreateRestaurant'
 import RestaurantUpdate from './restaurant/components/RestaurantUpdate'
+import SearchRestaurants from './restaurant/components/SearchRestaurants'
 
 import { AlertList } from 'react-bs-notifier'
 
@@ -95,6 +96,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/restaurants/:id/update' render={({ match }) => (
             <RestaurantUpdate alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/search-restaurants' render={({ match }) => (
+            <SearchRestaurants alert={this.alert} user={user} />
           )} />
         </main>
       </React.Fragment>

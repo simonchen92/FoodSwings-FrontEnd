@@ -5,5 +5,6 @@ export default {
   deleteRestaurantFailure: 'Restaurant Delete Was Not Successful',
   updateRestaurantSuccess: 'Restaurant Information Have Been Updated!',
   updateRestaurantFailure: 'Restaurant Update Was Not Successful!',
+  onYelpSearchFailure: 'Nothing Was Found!, Please Try Again',
   failure: 'Something Went Wrong! Please Try Again!'
 }

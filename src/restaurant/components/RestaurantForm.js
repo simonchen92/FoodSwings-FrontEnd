@@ -11,6 +11,7 @@ const RestaurantForm = ({ message, name, address, telephone, specialty, handleSu
           <div className="form-group">
             <label className="name">Restaurant Name</label>
             <input
+              required
               className="form-control"
               name="name"
               placeholder="Restaurant Name"
@@ -22,6 +23,7 @@ const RestaurantForm = ({ message, name, address, telephone, specialty, handleSu
           <div className="form-group">
             <label className="location">Location</label>
             <input
+              required
               className="form-control"
               name="location"
               placeholder="Address"
@@ -33,6 +35,7 @@ const RestaurantForm = ({ message, name, address, telephone, specialty, handleSu
           <div className="form-group">
             <label className="telephone">Telephone</label>
             <input
+              required
               className="form-control"
               name="telephone"
               placeholder="Telephone Number"
@@ -44,6 +47,7 @@ const RestaurantForm = ({ message, name, address, telephone, specialty, handleSu
           <div className="form-group">
             <label className="specialty">Specialty</label>
             <input
+              required
               className="form-control"
               name="specialty"
               placeholder="Cuisine"
