@@ -80,9 +80,10 @@ class SearchRestaurants extends Component {
                   {restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}<br/>
                   <strong>{restaurant.categories[0].title}<br/></strong>
                   Phone Number: <strong>{restaurant.phone}</strong><br/>
-                   Rating: <strong>{restaurant.rating}/5</strong><br/>
-                  <span className="restaurant-price">Price: {restaurant.price}<br/></span>
+                  Rating: <strong>{restaurant.rating}/5</strong><br/>
+                  Price: <span className="restaurant-price">{restaurant.price}<br/></span>
                   Reviews: {restaurant.review_count}
+                  <button className="btn-info add-restaurant-btn" type="submit">Add Restaurant</button>
                 </Card.Text>
               </Card.Body>
             </Card>

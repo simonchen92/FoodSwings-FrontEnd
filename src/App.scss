@@ -2,47 +2,85 @@ $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
-
-.flash-success,
-.flash-warning,
-.flash-error {
-  border: 1px solid $charcoal;
-  display: block;
-  left: 25%;
-  padding: 30px;
-  position: fixed;
-  text-align: center;
-  top: 15%;
-  width: 50%;
-  z-index: 1;
-}
-
-.flash-success {
-  background-color: $success;
-}
-
-.flash-warning {
-  background-color: $warning;
-}
-
-.flash-error {
-  background-color: $error;
-}
+$black: #000;
+$shamrock: #45e2ae;
+$green: #008000;
 
 .auth-form {
+  border: 1px solid $black;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  height: 60vh;
   justify-content: center;
-  margin: 15% auto 0;
+  margin: 15% auto;
   max-width: 600px;
-
+  text-align: center;  
+  width: 50vw;
+  
   h3,
   input {
-    margin-bottom: 5%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto 0;
+    text-align: center;
+    border-radius: 28px;
   }
 
   button {
-    align-self: flex-end;
+    align-self: center;
+    border-radius: 28px;
     max-width: 200px;
+    margin: auto 0;
+
+    &:hover {
+      background-color: $shamrock;
+    }
   }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  float: left;
+  max-width: 30%;
+  margin: 15px;
+  height: 60vh;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.yelp-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.yelp-header-main {
+  text-align: center;
+}
+
+.search-restaurant-input {
+  border-radius: 10px;
+  display: flex;
+  font-size: 24px;
+  height: 60px;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  width: 80vw;
+}
+
+.restaurant-price {
+  color: $green;
+}
+
+.add-restaurant-btn {
+  display: flex;
+  border-radius: 5px;
+  margin: 10px;
+  justify-content: center;
 }
