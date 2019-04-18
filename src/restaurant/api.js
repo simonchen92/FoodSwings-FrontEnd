@@ -70,3 +70,16 @@ export const searchYelp = (search, user) => {
     data: { search }
   })
 }
+
+export const addRestaurant = (restaurant, user) => {
+  console.log('user is', user)
+  console.log('restaurant is', restaurant)
+  return axios({
+    url: apiUrl + '/restaurants',
+    method: 'POST',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: { restaurant }
+  })
+}

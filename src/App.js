@@ -25,7 +25,7 @@ class App extends Component {
     this.state = {
       user: null,
       alerts: [],
-      timeout: 2000,
+      timeout: 3000,
       position: 'bottom-left'
     }
   }

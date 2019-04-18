@@ -3,6 +3,7 @@ import Alert from 'react-bootstrap/Alert'
 import { withRouter } from 'react-router-dom'
 
 const RestaurantForm = ({ message, name, address, telephone, specialty, handleSubmit, handleChange }) => {
+  console.log(telephone)
   return (
     <Fragment>
       { message && <Alert variant="danger" dismissible>{message}</Alert> }
