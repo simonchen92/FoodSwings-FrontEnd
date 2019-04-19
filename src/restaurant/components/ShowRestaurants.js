@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { showRestaurants } from '../api'
 import { Link, withRouter } from 'react-router-dom'
 
@@ -29,14 +29,12 @@ class ShowRestaurants extends Component {
 
     return (
       <div className='restaurants'>
-        <Fragment>
-          <h1 className='restaurant-name'>My Restaurants</h1>
-          {restaurants.map(restaurant => (
-            <div className='restaurant-id' key={restaurant.id}>
-              <Link to={'/restaurants/' + restaurant.id}>{restaurant.name}</Link>
-            </div>
-          ))}
-        </Fragment>
+        <h1 className='restaurant-name'>My Restaurants</h1>
+        {restaurants.map(restaurant => (
+          <div className='restaurant-id' key={restaurant.id}>
+            <Link to={'/restaurants/' + restaurant.id}>{restaurant.name}</Link>
+          </div>
+        ))}
       </div>
     )
   }

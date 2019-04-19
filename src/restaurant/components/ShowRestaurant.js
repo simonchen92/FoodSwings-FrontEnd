@@ -54,8 +54,8 @@ class ShowRestaurant extends Component {
 
     return (
       <Fragment>
-        <form>
-          <div>
+        <form className="show-restaurant-form">
+          <div className="show-restaurant">
             <h4>{name}</h4>
             <p>Location: {location}</p>
             <p>Telephone: {telephone}</p>

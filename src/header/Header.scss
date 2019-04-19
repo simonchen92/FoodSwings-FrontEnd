@@ -3,10 +3,11 @@ $charcoal: #bbb;
 .main-header {
   align-items: center;
   border-bottom: 1px solid $charcoal;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   font-family: 'Luckiest Guy', cursive;
-  padding: 10px;
-  margin: 10px;
+  padding: 0 20px;
+  height: 100px;
 
 
   a,

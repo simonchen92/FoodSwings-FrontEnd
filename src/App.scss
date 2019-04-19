@@ -5,6 +5,7 @@ $charcoal: #ccc;
 $black: #000;
 $shamrock: #45e2ae;
 $green: #008000;
+$bananamania: #FFF1AC;
 
 .auth-form {
   border: 1px solid $black;
@@ -79,9 +80,56 @@ $green: #008000;
 }
 
 .add-restaurant-btn {
-  // display: flex;
   border-radius: 5px;
-  // margin: 10px;
-  // justify-content: center;
 }
 
+.restaurants-name {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.restaurant-id {
+  float: left;
+  border: 2px solid $black;
+  border-radius: 8px;
+  color: $black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.show-restaurant-form {
+  border: 2px solid $black;
+  border-radius: 8px;
+  text-align: center;
+  margin: 30px;
+}
+
+.btn-danger {
+  margin: 10px;
+}
+
+.btn-primary {
+  margin: 10px;
+}
+
+.general-restaurant-form {
+  border: 2px solid $black;
+  border-radius: 8px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 30px;
+}
+
+.form-control {
+  width: 60vw;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
