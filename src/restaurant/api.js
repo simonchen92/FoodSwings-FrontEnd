@@ -22,7 +22,6 @@ export const showOneRestaurant = (user, id) => {
 }
 
 export const createRestaurant = (user, restaurantData) => {
-  console.log(restaurantData)
   return axios({
     method: 'POST',
     url: apiUrl + '/restaurants/',
@@ -34,9 +33,7 @@ export const createRestaurant = (user, restaurantData) => {
 }
 
 export const updateRestaurant = (user, restaurantData) => {
-  console.log(restaurantData)
   const id = restaurantData.restaurant.id
-  console.log('id is', id)
   return axios({
     method: 'PATCH',
     url: apiUrl + `/restaurants/${id}`,
@@ -59,8 +56,6 @@ export const deleteRestaurant = (user, id) => {
 }
 
 export const searchYelp = (search, user) => {
-  console.log('user is', user)
-  console.log('search is', search)
   return axios({
     url: apiUrl + '/yelp-search',
     method: 'POST',
@@ -72,8 +67,6 @@ export const searchYelp = (search, user) => {
 }
 
 export const addRestaurant = (restaurant, user) => {
-  console.log('user is', user)
-  console.log('restaurant is', restaurant)
   return axios({
     url: apiUrl + '/restaurants',
     method: 'POST',

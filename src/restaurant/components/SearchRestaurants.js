@@ -36,11 +36,9 @@ class SearchRestaurants extends Component {
   }
 
   handleSubmit = (event) => {
-    console.log(this.handleSubmit)
     event.preventDefault()
     const { alert, user } = this.props
     const restaurantObj = this.state.restaurants[Number(event.target.value)]
-    console.log(restaurantObj)
 
     const addedRestaurant = {
       name: restaurantObj.name,

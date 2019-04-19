@@ -46,7 +46,7 @@ class ShowRestaurant extends Component {
   render () {
     if (this.state.shouldRedirect) {
       return <Redirect to={{
-        pathname: '/restaurants/'
+        pathname: '/restaurants'
       }} />
     }
 

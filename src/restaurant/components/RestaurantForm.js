@@ -1,12 +1,9 @@
 import React, { Fragment } from 'react'
-import Alert from 'react-bootstrap/Alert'
 import { withRouter } from 'react-router-dom'
 
 const RestaurantForm = ({ message, name, address, telephone, specialty, handleSubmit, handleChange }) => {
-  console.log(telephone)
   return (
     <Fragment>
-      { message && <Alert variant="danger" dismissible>{message}</Alert> }
       <div className="createRestaurantForm">
         <form className="create-restaurant-form" onSubmit={handleSubmit}>
           <div className="form-group">
