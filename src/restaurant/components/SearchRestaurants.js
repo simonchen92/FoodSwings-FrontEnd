@@ -109,7 +109,6 @@ class SearchRestaurants extends Component {
           </Card>
         ))}
       </div>
-
     )
   }
 }
