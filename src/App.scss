@@ -89,8 +89,13 @@ $bananamania: #FFF1AC;
   align-items: center;
 }
 
+.restaurants {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .restaurant-id {
-  float: left;
   border: 2px solid $black;
   border-radius: 8px;
   color: $black;
