@@ -11,38 +11,44 @@ export const showRestaurants = (user) => {
   })
 }
 
-export const showOneRestaurant = (user, id) => {
-  return axios({
-    method: 'GET',
-    url: apiUrl + `/restaurants/${id}`,
-    headers: {
-      'Authorization': `Token token=${user.token}`
-    }
-  })
-}
+// WANT USER TO ONLY ADD AND DELETE RESTAURANTS FROM THEIR LIST
 
-export const createRestaurant = (user, restaurantData) => {
-  return axios({
-    method: 'POST',
-    url: apiUrl + '/restaurants/',
-    headers: {
-      'Authorization': `Token token=${user.token}`
-    },
-    data: restaurantData
-  })
-}
+// export const showOneRestaurant = (user, id) => {
+//   return axios({
+//     method: 'GET',
+//     url: apiUrl + `/restaurants/${id}`,
+//     headers: {
+//       'Authorization': `Token token=${user.token}`
+//     }
+//   })
+// }
 
-export const updateRestaurant = (user, restaurantData) => {
-  const id = restaurantData.restaurant.id
-  return axios({
-    method: 'PATCH',
-    url: apiUrl + `/restaurants/${id}`,
-    headers: {
-      'Authorization': `Token token=${user.token}`
-    },
-    data: restaurantData
-  })
-}
+// WANT USER TO ONLY ADD AND DELETE RESTAURANTS FROM THEIR LIST
+
+// export const createRestaurant = (user, restaurantData) => {
+//   return axios({
+//     method: 'POST',
+//     url: apiUrl + '/restaurants/',
+//     headers: {
+//       'Authorization': `Token token=${user.token}`
+//     },
+//     data: restaurantData
+//   })
+// }
+
+// WANT USER TO ONLY ADD AND DELETE RESTAURANTS FROM THEIR LIST
+
+// export const updateRestaurant = (user, restaurantData) => {
+//   const id = restaurantData.restaurant.id
+//   return axios({
+//     method: 'PATCH',
+//     url: apiUrl + `/restaurants/${id}`,
+//     headers: {
+//       'Authorization': `Token token=${user.token}`
+//     },
+//     data: restaurantData
+//   })
+// }
 
 export const deleteRestaurant = (user, id) => {
   return axios({

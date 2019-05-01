@@ -1,23 +1,43 @@
-$success: #c7f282;
+$success: #23d529;
 $warning: #f1e681;
-$error: #f08181;
+$error: #f50d0d;
 $charcoal: #ccc;
 $black: #000;
 $shamrock: #45e2ae;
 $green: #008000;
-$bananamania: #FFF1AC;
+$curiousblue: #277BC0;
+$scarlet: #F02F18;
+$tiber: #244142;
 
 .auth-form {
+  background-color: white;
+  align-items: center;
   border: 1px solid $black;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   height: 60vh;
   justify-content: center;
-  margin: 15% auto;
-  max-width: 600px;
-  text-align: center;  
-  width: 50vw;
+  margin: auto;
+  margin-top: 100px;
+  max-width: 400px;
+  text-align: center;
+
+  input[type="email"], input[type="password"] {
+    border: 0;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    width: 60%;
+    outline: none;
+    transition: 0.25s;
+    border: 2px solid $curiousblue;
+  }
+
+  input[type="email"]:focus, input[type="password"]:focus {
+    width: 80%;
+    border-color: $green;
+  }
   
   h3,
   input {
@@ -36,7 +56,7 @@ $bananamania: #FFF1AC;
     margin: auto 0;
 
     &:hover {
-      background-color: $shamrock;
+      background-color: $charcoal;
     }
   }
 }
@@ -44,9 +64,9 @@ $bananamania: #FFF1AC;
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   display: flex;
-  justify-content: center;
-  float: left;
-  max-width: 30%;
+  justify-content: space-between;
+  max-width: 315px;
+  max-height: 515px;
   margin: 15px;
   overflow: hidden;
   height: 60vh;
@@ -62,17 +82,16 @@ $bananamania: #FFF1AC;
 
 .yelp-header-main {
   text-align: center;
+  color: white;
+  margin-top: 20px;
 }
 
 .search-restaurant-input {
   border-radius: 10px;
   display: flex;
   font-size: 24px;
-  height: 60px;
-  justify-content: center;
-  margin: 10px;
   padding: 10px;
-  width: 60vw;
+  width: 100%;
 }
 
 .restaurant-price {
@@ -83,25 +102,17 @@ $bananamania: #FFF1AC;
   border-radius: 5px;
 }
 
-.restaurants-name {
-  display: flex;
-  text-align: center;
-  align-items: center;
+.delete-restaurant-btn {
+  border-radius: 5px;
 }
 
-.restaurants {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.restaurant-id {
-  border: 2px solid $black;
-  border-radius: 8px;
-  color: $black;
-  padding: 10px;
+.my-restaurants {
+  font-size: 24px;
   margin: 10px;
+  color: white;
+  font-weight: bold;
 }
+
 
 .show-restaurant-form {
   border: 2px solid $black;
@@ -137,4 +148,19 @@ h1 {
   text-align: center;
   padding: 10px;
   margin: 10px;
+}
+
+.restaurant-spacer {
+  height: 48px;
+}
+
+.home-page {
+  font-family: 'Gochi Hand';
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 24px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
 }

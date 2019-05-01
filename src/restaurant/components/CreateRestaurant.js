@@ -1,72 +1,77 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import { createRestaurant } from '../api'
-import { Redirect } from 'react-router'
-import RestaurantForm from './RestaurantForm'
-import messages from '../messages'
+// INITIAL PROJECT FOR CRUD ACTION
+// CREATE A RESTAURANT NO LONGER IN USE!!!
+// WANT USER TO ONLY ADD AND DELETE RESTAURANTS FROM THEIR LIST
 
-class CreateRestaurant extends Component {
-  constructor () {
-    super()
+// import React, { Component } from 'react'
+// import { withRouter } from 'react-router-dom'
+// import { createRestaurant } from '../api'
+// import { Redirect } from 'react-router'
+// import RestaurantForm from './RestaurantForm'
+// import messages from '../messages'
 
-    this.state = {
-      restaurant: {
-        name: '',
-        location: '',
-        telephone: '',
-        specialty: ''
-      },
-      created: false,
-      message: null
-    }
-  }
+// class CreateRestaurant extends Component {
+//   constructor () {
+//     super()
 
-  handleSubmit = (event) => {
-    event.preventDefault()
+//     this.state = {
+//       restaurant: {
+//         image: '',
+//         name: '',
+//         location: '',
+//         telephone: '',
+//         specialty: ''
+//       },
+//       created: false,
+//       message: null
+//     }
+//   }
 
-    const { alert } = this.props
-    const restaurant = this.state
+//   handleSubmit = (event) => {
+//     event.preventDefault()
 
-    createRestaurant(this.props.user, { restaurant: restaurant.restaurant })
-      .then(response => this.setState({
-        created: true,
-        restaurant: response.data.restaurant
-      }))
-      .then(() => alert(messages.createRestaurantSuccess, 'success'))
-      .catch(() => {
-        this.setState({ restaurant: { ...restaurant, name: '', location: '', telephone: '', specialty: '' } })
-        alert(messages.createRestaurantFailure, 'danger')
-      })
-  }
+//     const { alert } = this.props
+//     const restaurant = this.state
 
-  handleChange = event => {
-    const inputName = event.target.name
-    const updatedInputValue = event.target.value
-    const updatedRestaurant = { ...this.state.restaurant, [inputName]: updatedInputValue }
-    this.setState({ restaurant: updatedRestaurant })
-  }
+//     createRestaurant(this.props.user, { restaurant: restaurant.restaurant })
+//       .then(response => this.setState({
+//         created: true,
+//         restaurant: { ...response.data.restaurant, image: response.data.restaurant.image_url }
+//       }))
+//       .then(() => alert(messages.createRestaurantSuccess, 'success'))
+//       .catch(() => {
+//         this.setState({ restaurant: { ...restaurant, name: '', location: '', telephone: '', specialty: '' } })
+//         alert(messages.createRestaurantFailure, 'danger')
+//       })
+//   }
 
-  render () {
-    const { restaurant, created, message } = this.state
+//   handleChange = event => {
+//     const inputName = event.target.name
+//     const updatedInputValue = event.target.value
+//     const updatedRestaurant = { ...this.state.restaurant, [inputName]: updatedInputValue }
+//     this.setState({ restaurant: updatedRestaurant })
+//   }
 
-    if (created) {
-      return <Redirect to={`/restaurants/${restaurant.id}`} />
-    }
+//   render () {
+//     const { restaurant, created, message } = this.state
 
-    const { name, location, telephone, specialty } = this.state.restaurant
+//     if (created) {
+//       return <Redirect to={`/restaurants/${restaurant.id}`} />
+//     }
 
-    return (
-      <RestaurantForm
-        name={name}
-        address={location}
-        telephone={telephone}
-        specialty={specialty}
-        message={message}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
-    )
-  }
-}
+//     const { name, location, telephone, specialty } = this.state.restaurant
 
-export default withRouter(CreateRestaurant)
+//     return (
+//       <RestaurantForm
+//         name={name}
+//         address={location}
+//         telephone={telephone}
+//         specialty={specialty}
+//         message={message}
+//         handleChange={this.handleChange}
+//         handleSubmit={this.handleSubmit}
+//       />
+//     )
+//   }
+// }
+
+// export default withRouter(CreateRestaurant)

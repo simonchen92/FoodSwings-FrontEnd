@@ -2,7 +2,7 @@ export default {
   createRestaurantSuccess: 'Restaurant Successfully Created!',
   createRestaurantFailure: 'Restaurant Creation was Unsuccessful! Please Try Again!',
   deleteRestaurantSuccess: 'Restaurant Have Been Deleted!',
-  deleteRestaurantFailure: 'Restaurant Delete Was Not Successful',
+  deleteRestaurantFailure: 'Restaurant Was Not Successfully Deleted',
   updateRestaurantSuccess: 'Restaurant Information Have Been Updated!',
   updateRestaurantFailure: 'Restaurant Update Was Not Successful!',
   onYelpSearchFailure: 'Nothing Was Found!, Please Try Again',

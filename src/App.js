@@ -11,10 +11,10 @@ import ChangePassword from './auth/components/ChangePassword'
 import Home from './restaurant/Home'
 
 import ShowRestaurants from './restaurant/components/ShowRestaurants'
-import ShowRestaurant from './restaurant/components/ShowRestaurant'
-import CreateRestaurant from './restaurant/components/CreateRestaurant'
-import RestaurantUpdate from './restaurant/components/RestaurantUpdate'
 import SearchRestaurants from './restaurant/components/SearchRestaurants'
+// import ShowRestaurant from './restaurant/components/ShowRestaurant'
+// import CreateRestaurant from './restaurant/components/CreateRestaurant'
+// import RestaurantUpdate from './restaurant/components/RestaurantUpdate'
 
 import { AlertList } from 'react-bs-notifier'
 
@@ -76,7 +76,7 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
-          <Route exact path="/home" render={() => (
+          <Route exact path="/" render={() => (
             <Home />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
@@ -88,7 +88,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/restaurants' render={() => (
             <ShowRestaurants alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/restaurants/:id' render={() => (
+
+          {/* THIS IS NOT IN USE ANYMORE BECAUSE I WANT USERS TO ONLY ADD AND CREATE RESTAURANTS TO THEIR LIST */}
+
+          {/* <AuthenticatedRoute user={user} exact path='/restaurants/:id' render={() => (
             <ShowRestaurant alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/create-restaurant' render={() => (
@@ -96,7 +99,8 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/restaurants/:id/update' render={({ match }) => (
             <RestaurantUpdate alert={this.alert} user={user} />
-          )} />
+          )} /> */}
+
           <AuthenticatedRoute user={user} exact path='/search-restaurants' render={({ match }) => (
             <SearchRestaurants alert={this.alert} user={user} />
           )} />

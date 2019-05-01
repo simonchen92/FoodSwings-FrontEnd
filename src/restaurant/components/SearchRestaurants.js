@@ -41,6 +41,7 @@ class SearchRestaurants extends Component {
     const restaurantObj = this.state.restaurants[Number(event.target.value)]
 
     const addedRestaurant = {
+      image: restaurantObj.image_url,
       name: restaurantObj.name,
       location: `${restaurantObj.location.address1} ${restaurantObj.location.city} ${restaurantObj.location.state} ${restaurantObj.location.zip_code}`,
       telephone: +restaurantObj.phone,
@@ -89,25 +90,28 @@ class SearchRestaurants extends Component {
             onChange={this.handleChange}
           />
         </form>
-        {this.state.restaurants.map((restaurant, index) => (
-          <Card key={ restaurant.alias } className="">
-            <Card.Img className="yelp-image" variant="top" src={restaurant.image_url} />
-            <Card.Body>
-              <Card.Title>{restaurant.name}</Card.Title>
-              <Card.Text className="card-text">
-                {restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}<br/>
-                <strong>{restaurant.categories[0].title}</strong><br/>
-                  Phone Number: <strong>{restaurant.phone}</strong><br/>
-                  Rating: <strong>{restaurant.rating}/5</strong><br/>
-                  Price: <span className="restaurant-price"><strong>{restaurant.price}</strong></span><br/>
-                  Reviews: {restaurant.review_count}
-              </Card.Text>
-              <div className="d-flex justify-content-center my-3">
-                <button className="btn-info add-restaurant-btn" onClick={this.handleSubmit} value={index} name="restaurant">Add Restaurant</button>
-              </div>
-            </Card.Body>
-          </Card>
-        ))}
+        <div className="d-flex flex-wrap justify-content-center">
+          {this.state.restaurants.map((restaurant, index) => {
+            return (
+              <Card key={ restaurant.alias } >
+                <Card.Img className="yelp-image" variant="top" src={restaurant.image_url} />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title className="restaurant-spacer">{restaurant.name}</Card.Title>
+                  <Card.Text className="m-0 restaurant-spacer">{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state} {restaurant.location.zip_code}</Card.Text>
+                  <Card.Text className="m-0"><strong>{restaurant.categories[0].title}</strong></Card.Text>
+                  <Card.Text className="m-0"><strong>Phone Number:</strong> {restaurant.phone}</Card.Text>
+                  <Card.Text className="m-0"><strong>Rating:</strong> {restaurant.rating}/5</Card.Text>
+                  <Card.Text className="m-0"><strong>Price:</strong> <span className="restaurant-price"><strong>{restaurant.price}</strong></span></Card.Text>
+                  <Card.Text className="m-0"><strong>Reviews:</strong> {restaurant.review_count}</Card.Text>
+                  <div className="d-flex justify-content-center mt-1">
+                    <button className="btn-info add-restaurant-btn" onClick={this.handleSubmit} value={index} name="restaurant">Add Restaurant</button>
+                  </div>
+                </Card.Body>
+              </Card>
+            )
+          }
+          )}
+        </div>
       </div>
     )
   }

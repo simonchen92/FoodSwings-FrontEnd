@@ -1,72 +1,75 @@
-import React, { Component, Fragment } from 'react'
-import { Redirect } from 'react-router'
-import { Link, withRouter } from 'react-router-dom'
-import { showOneRestaurant, deleteRestaurant } from '../api.js'
-import messages from '../messages'
+// SHOW RESTAURANT NO LONGER IN USE!!
+// WANT USER TO ONLY ADD AND DELETE RESTAURANTS FROM THEIR LIST
 
-class ShowRestaurant extends Component {
-  constructor () {
-    super()
+// import React, { Component, Fragment } from 'react'
+// import { Redirect } from 'react-router'
+// import { Link, withRouter } from 'react-router-dom'
+// import { showOneRestaurant, deleteRestaurant } from '../api.js'
+// import messages from '../messages'
 
-    this.state = {
-      restaurant: {
-        name: '',
-        location: '',
-        telephone: '',
-        specialty: ''
-      },
-      shouldRedirect: false
-    }
-  }
+// class ShowRestaurant extends Component {
+//   constructor () {
+//     super()
 
-  componentDidMount () {
-    const id = this.props.match.params.id
+//     this.state = {
+//       restaurant: {
+//         name: '',
+//         location: '',
+//         telephone: '',
+//         specialty: ''
+//       },
+//       shouldRedirect: false
+//     }
+//   }
 
-    showOneRestaurant(this.props.user, id)
-      .then(response => this.setState({ restaurant: response.data.restaurant }))
-      .catch(error => {
-        console.error(error)
-        alert(messages.failure, 'danger')
-      })
-  }
+//   componentDidMount () {
+//     const id = this.props.match.params.id
 
-  handleDelete = () => {
-    const id = this.props.match.params.id
-    const { alert } = this.props
+//     showOneRestaurant(this.props.user, id)
+//       .then(response => this.setState({ restaurant: response.data.restaurant }))
+//       .catch(error => {
+//         console.error(error)
+//         alert(messages.failure, 'danger')
+//       })
+//   }
 
-    deleteRestaurant(this.props.user, id)
-      .then(() => this.setState({ shouldRedirect: true }))
-      .then(() => alert(messages.deleteRestaurantSuccess, 'success'))
-      .catch(error => {
-        console.error(error)
-        alert(messages.deleteRestaurantFailure, 'danger')
-      })
-  }
+//   handleDelete = () => {
+//     const id = this.props.match.params.id
+//     const { alert } = this.props
 
-  render () {
-    if (this.state.shouldRedirect) {
-      return <Redirect to={{
-        pathname: '/restaurants'
-      }} />
-    }
+//     deleteRestaurant(this.props.user, id)
+//       .then(() => this.setState({ shouldRedirect: true }))
+//       .then(() => alert(messages.deleteRestaurantSuccess, 'success'))
+//       .catch(error => {
+//         console.error(error)
+//         alert(messages.deleteRestaurantFailure, 'danger')
+//       })
+//   }
 
-    const { name, location, telephone, specialty } = this.state.restaurant
+//   render () {
+//     if (this.state.shouldRedirect) {
+//       return <Redirect to={{
+//         pathname: '/restaurants'
+//       }} />
+//     }
 
-    return (
-      <Fragment>
-        <form className="show-restaurant-form">
-          <div className="show-restaurant">
-            <h4>{name}</h4>
-            <p>Location: {location}</p>
-            <p>Telephone: {telephone}</p>
-            <p>Specialty: {specialty}</p>
-            <button className="btn-danger" onClick={this.handleDelete}>Delete</button>
-            <Link to={this.props.match.url + '/update'}><button className="btn-primary">Update</button></Link>
-          </div>
-        </form>
-      </Fragment>
-    )
-  }
-}
+//     const { name, location, telephone, specialty } = this.state.restaurant
 
-export default withRouter(ShowRestaurant)
+//     return (
+//       <Fragment>
+//         <form className="show-restaurant-form">
+//           <div className="show-restaurant">
+//             <h4>{name}</h4>
+//             <p>Location: {location}</p>
+//             <p>Telephone: {telephone}</p>
+//             <p>Specialty: {specialty}</p>
+//             <button className="btn-danger" onClick={this.handleDelete}>Delete</button>
+//             <Link to={this.props.match.url + '/update'}><button className="btn-primary">Update</button></Link>
+//           </div>
+//         </form>
+//       </Fragment>
+//     )
+//   }
+// }
+
+// export default withRouter(ShowRestaurant)

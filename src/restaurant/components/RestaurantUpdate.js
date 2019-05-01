@@ -1,81 +1,84 @@
-import React, { Component } from 'react'
-import { showOneRestaurant, updateRestaurant } from '../api'
-import { withRouter } from 'react-router-dom'
-import { Redirect } from 'react-router'
-import RestaurantForm from './RestaurantForm'
-import messages from '../messages'
+// UPDATE RESTAURANT NO LONGER IN USE
+// WANT USER TO ONLY ADD AND DELETE RESTAURANTS FROM THEIR LIST
 
-class RestaurantUpdate extends Component {
-  constructor () {
-    super()
+// import React, { Component } from 'react'
+// import { showOneRestaurant, updateRestaurant } from '../api'
+// import { withRouter } from 'react-router-dom'
+// import { Redirect } from 'react-router'
+// import RestaurantForm from './RestaurantForm'
+// import messages from '../messages'
 
-    this.state = {
-      restaurant: {
-        name: '',
-        location: '',
-        telephone: '',
-        specialty: ''
-      },
-      updated: false,
-      message: null
-    }
-  }
+// class RestaurantUpdate extends Component {
+//   constructor () {
+//     super()
 
-  componentDidMount () {
-    const id = this.props.match.params.id
-    showOneRestaurant(this.props.user, id)
-      .then(response => this.setState({ restaurant: response.data.restaurant }))
-      .catch(error => {
-        console.error(error)
-        alert(messages.failure, 'danger')
-      })
-  }
+//     this.state = {
+//       restaurant: {
+//         name: '',
+//         location: '',
+//         telephone: '',
+//         specialty: ''
+//       },
+//       updated: false,
+//       message: null
+//     }
+//   }
 
-handleSubmit = (event) => {
-  event.preventDefault()
+//   componentDidMount () {
+//     const id = this.props.match.params.id
+//     showOneRestaurant(this.props.user, id)
+//       .then(response => this.setState({ restaurant: response.data.restaurant }))
+//       .catch(error => {
+//         console.error(error)
+//         alert(messages.failure, 'danger')
+//       })
+//   }
 
-  const { alert } = this.props
-  const restaurant = this.state
+// handleSubmit = (event) => {
+//   event.preventDefault()
 
-  updateRestaurant(this.props.user, restaurant)
-    .then(response => this.setState({
-      updated: true,
-      restaurant: response.data.restaurant
-    }))
-    .then(() => alert(messages.updateRestaurantSuccess, 'success'))
-    .catch(() => {
-      this.setState({ restaurant: { ...restaurant, name: '', location: '', telephone: '', specialty: '' } })
-      alert(messages.updateRestaurantFailure, 'danger')
-    })
-}
+//   const { alert } = this.props
+//   const restaurant = this.state
 
-handleChange = event => {
-  const inputName = event.target.name
-  const updatedInputValue = event.target.value
-  const updatedRestaurant = { ...this.state.restaurant, [inputName]: updatedInputValue }
-  this.setState({ restaurant: updatedRestaurant })
-}
+//   updateRestaurant(this.props.user, restaurant)
+//     .then(response => this.setState({
+//       updated: true,
+//       restaurant: response.data.restaurant
+//     }))
+//     .then(() => alert(messages.updateRestaurantSuccess, 'success'))
+//     .catch(() => {
+//       this.setState({ restaurant: { ...restaurant, name: '', location: '', telephone: '', specialty: '' } })
+//       alert(messages.updateRestaurantFailure, 'danger')
+//     })
+// }
 
-render () {
-  const { restaurant, updated, message } = this.state
+// handleChange = event => {
+//   const inputName = event.target.name
+//   const updatedInputValue = event.target.value
+//   const updatedRestaurant = { ...this.state.restaurant, [inputName]: updatedInputValue }
+//   this.setState({ restaurant: updatedRestaurant })
+// }
 
-  if (updated) {
-    return <Redirect to={`/restaurants/${restaurant.id}`} />
-  }
-  const { name, location, telephone, specialty } = this.state.restaurant
+// render () {
+//   const { restaurant, updated, message } = this.state
 
-  return (
-    <RestaurantForm
-      name={name}
-      address={location}
-      telephone={telephone}
-      specialty={specialty}
-      message={message}
-      handleChange={this.handleChange}
-      handleSubmit={this.handleSubmit}
-    />
-  )
-}
-}
+//   if (updated) {
+//     return <Redirect to={`/restaurants/${restaurant.id}`} />
+//   }
+//   const { name, location, telephone, specialty } = this.state.restaurant
 
-export default withRouter(RestaurantUpdate)
+//   return (
+//     <RestaurantForm
+//       name={name}
+//       address={location}
+//       telephone={telephone}
+//       specialty={specialty}
+//       message={message}
+//       handleChange={this.handleChange}
+//       handleSubmit={this.handleSubmit}
+//     />
+//   )
+// }
+// }
+
+// export default withRouter(RestaurantUpdate)
